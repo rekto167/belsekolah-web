@@ -11,7 +11,30 @@
 </head>
 
 <body>
-    <div class="main">
+    <navbar>
+        <div class="w-full p-3 bg-cyan-500 flex">
+            <div class="mr-3">
+                <h1>Bel Sekolah</h1>
+            </div>
+            <div class="font-semibold text-slate-100 flex">
+                <ul class="flex">
+                    <li class="mr-2">
+                        <a href="{{ route('hari') }}">Hari</a>
+                    </li>
+                    <li class="mr-2">
+                        <a href="#">Aktifitas</a>
+                    </li>
+                    <li class="mr-2">
+                        <a href="#">Jadwal</a>
+                    </li>
+                    <li class="mr-2">
+                        <a href="#">Bell</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </navbar>
+    <div class="main p-3">
         @yield('content')
     </div>
     @livewireScripts
