@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="container flex">
-            <a href="{{ url()->previous() }}" class="bg-cyan-300 p-2 mb-3 text-dark font-semibold">Back</a>
+            <a href="{{ route('home') }}" class="bg-cyan-300 p-2 mb-3 text-dark font-semibold">Back</a>
         </div>
         <div class="container mt-5">
             <livewire:hari.create />

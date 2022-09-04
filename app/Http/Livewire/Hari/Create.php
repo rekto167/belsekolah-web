@@ -10,6 +10,12 @@ class Create extends Component
 
     public $showModal;
     public $name;
+
+    public function mound()
+    {
+        $this->showModal = false;
+    }
+
     public function render()
     {
         return view('livewire.hari.create');

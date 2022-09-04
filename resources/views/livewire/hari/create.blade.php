@@ -4,7 +4,7 @@
             data-bs-toggle="modal" wire:click="modalShow">Tambah
     </button>
     {{-- modal --}}
-    <div class="relative z-10 @if (!$showModal) hidden @endif" aria-labelledby="modal-title" role="dialog"
+    <div class="relative z-10 @if ($showModal == false) hidden @endif" aria-labelledby="modal-title" role="dialog"
          aria-modal="true">
         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 

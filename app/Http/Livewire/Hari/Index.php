@@ -11,8 +11,13 @@ class Index extends Component
         'createDay' => 'handleCreateDay'
     ];
 
-    public $showModalEdit=false;
+    public $showModalEdit;
     public $nameDtl;
+
+    public function mount()
+    {
+        $this->showModalEdit = false;
+    }
 
     public function render()
     {
