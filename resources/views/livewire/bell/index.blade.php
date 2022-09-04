@@ -19,6 +19,11 @@
                             <td class="border border-slate-700 p-2">{{ $loop->iteration }}</td>
                             <td class="border border-slate-700 p-2">{{ $bell->name }}</td>
                             <td class="border border-slate-700 p-2">
+                                <audio controls>
+                                    <source src="{{ asset('/storage/sound/' . $bell->name . '.mp3') }}" type="audio/mpeg">
+                                </audio>
+                            </td>
+                            <td class="border border-slate-700 p-2">
                                 <button type="button" class="bg-red-500 p-2 text-white"
                                     wire:click="deleteIt({{ $bell->id }})">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
