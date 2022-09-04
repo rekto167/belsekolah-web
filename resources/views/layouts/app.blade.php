@@ -22,7 +22,7 @@
                         <a href="{{ route('hari') }}">Hari</a>
                     </li>
                     <li class="mr-2">
-                        <a href="#">Aktifitas</a>
+                        <a href="{{ route('aktifitas') }}">Aktifitas</a>
                     </li>
                     <li class="mr-2">
                         <a href="#">Jadwal</a>

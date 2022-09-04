@@ -15,4 +15,9 @@ class MainController extends Controller
     {
         return view('hari');
     }
+
+    public function aktifitas()
+    {
+        return view('aktifitas');
+    }
 }
