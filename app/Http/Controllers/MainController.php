@@ -20,4 +20,9 @@ class MainController extends Controller
     {
         return view('aktifitas');
     }
+
+    public function bell()
+    {
+        return view('bell');
+    }
 }

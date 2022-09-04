@@ -28,7 +28,7 @@
                         <a href="#">Jadwal</a>
                     </li>
                     <li class="mr-2">
-                        <a href="#">Bell</a>
+                        <a href="{{ route('bell') }}">Bell</a>
                     </li>
                 </ul>
             </div>
