@@ -8,9 +8,8 @@ use Livewire\Component;
 class Create extends Component
 {
 
-    public $showModal=false;
+    public $showModal;
     public $name;
-
     public function render()
     {
         return view('livewire.hari.create');
