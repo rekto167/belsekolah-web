@@ -15,6 +15,8 @@ class CreateBellsTable extends Migration
     {
         Schema::create('bells', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->longText('file');
             $table->timestamps();
         });
     }
