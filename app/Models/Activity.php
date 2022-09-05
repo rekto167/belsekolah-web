@@ -9,4 +9,10 @@ class Activity extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    protected $with = ['bell'];
+
+    public function bell()
+    {
+        return $this->belongsTo(Bell::class, 'bell_id', 'id');
+    }
 }

@@ -27,3 +27,4 @@ Route::prefix('/aktifitas')->group(function()
     Route::get('/', [MainController::class, 'aktifitas'])->name('aktifitas');
 });
 Route::get('/bell', [MainController::class, 'bell'])->name('bell');
+Route::get('/jadwal', [MainController::class, 'jadwal'])->name('jadwal');

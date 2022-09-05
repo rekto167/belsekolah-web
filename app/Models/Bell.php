@@ -9,4 +9,9 @@ class Bell extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function activity()
+    {
+        return $this->hasOne(Activity::class);
+    }
 }

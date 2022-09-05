@@ -25,4 +25,9 @@ class MainController extends Controller
     {
         return view('bell');
     }
+
+    public function jadwal()
+    {
+        return view('jadwal');
+    }
 }

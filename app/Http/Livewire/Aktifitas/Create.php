@@ -3,12 +3,14 @@
 namespace App\Http\Livewire\Aktifitas;
 
 use App\Models\Activity;
+use App\Models\Bell;
 use Livewire\Component;
 
 class Create extends Component
 {
     public $name;
     public $show;
+    public $bell_id;
 
     public function mount()
     {
@@ -17,7 +19,10 @@ class Create extends Component
 
     public function render()
     {
-        return view('livewire.aktifitas.create');
+        $bells = Bell::all();
+        return view('livewire.aktifitas.create',[
+            'bells'=>$bells,
+        ]);
     }
 
     public function modalShow()
@@ -34,7 +39,8 @@ class Create extends Component
         ]);
 
         $activity = Activity::create([
-            'name' => $this->name
+            'name' => $this->name,
+            'bell_id' => $this->bell_id
         ]);
 
         $this->show = false;

@@ -30,6 +30,7 @@
             <tr>
                 <th class="border border-slate-600 p-2">#</th>
                 <th class="border border-slate-600 p-2">Nama</th>
+                <th class="border border-slate-600 p-2">Bell</th>
                 <th class="border border-slate-600 p-2"></th>
             </tr>
         </thead>
@@ -38,6 +39,11 @@
                 <tr>
                     <td class="border border-slate-700 p-2">{{ $loop->iteration }}</td>
                     <td class="border border-slate-700 p-2">{{ $activity->name }}</td>
+                    <td class="border border-slate-700 p-2">
+                        <audio controls>
+                            <source src="{{ asset('/storage/sound/' . $activity->bell->name . '.mp3') }}">
+                        </audio>
+                    </td>
                     <td class="border border-slate-700 p-2">
                         <button type="button" class="bg-red-500 p-2 text-white"
                             wire:click="deleteIt({{ $activity->id }})">

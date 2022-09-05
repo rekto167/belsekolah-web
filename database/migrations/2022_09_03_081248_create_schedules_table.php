@@ -15,6 +15,9 @@ class CreateSchedulesTable extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
+            $table->string('time');
+            $table->foreignId('day_id');
+            $table->foreignId('activity_id');
             $table->timestamps();
         });
     }

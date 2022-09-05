@@ -25,6 +25,20 @@
                                         placeholder="contoh: Jam Pertama" />
                                 </label>
                             </div>
+                            <div class="flex flex-row">
+                                <label class="block">
+                                    <span
+                                        class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                                        Bell
+                                    </span>
+                                    <select wire:model="bell_id">
+                                        <option selected>---Pilih bell---</option>
+                                        @foreach ($bells as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </label>
+                            </div>
                         </div>
                         <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                             <button type="submit"

@@ -41,5 +41,6 @@ class Create extends Component
             'name'=>$this->name,
             'file'=>$file
         ]);
+        $this->emit('createBell', $bell);
     }
 }

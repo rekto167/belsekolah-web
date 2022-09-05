@@ -25,7 +25,7 @@
                         <a href="{{ route('aktifitas') }}">Aktifitas</a>
                     </li>
                     <li class="mr-2">
-                        <a href="#">Jadwal</a>
+                        <a href="{{ route('jadwal') }}">Jadwal</a>
                     </li>
                     <li class="mr-2">
                         <a href="{{ route('bell') }}">Bell</a>
