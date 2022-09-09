@@ -8,9 +8,7 @@
                 @endforeach
             </select>
         </div>
-        <div class="mb-3">
-            <button class="bg-cyan-300 text-dark hover:bg-cyan-500 hover:text-white p-2 font-semibold">Tambah</button>
-        </div>
+        <livewire:jadwal.create />
     </div>
     <div class="container">
         <table class="border-collapse border border-slate-500">
