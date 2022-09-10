@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Livewire\Bell;
-
 use App\Models\Bell;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -31,6 +30,7 @@ class Create extends Component
 
     public function store()
     {
+        ini_set('upload_max_filesize', '200M');
         $this->validate([
             'name'=>'required|string',
             'file'=>'file|mimes:audio/mpeg,mpga,mp3,wav|max:102400'
