@@ -12,6 +12,7 @@ class Create extends Component
     public $file;
     public $name;
     public $showForm;
+    public $isUploading;
 
     public function mount()
     {
@@ -32,7 +33,7 @@ class Create extends Component
     {
         $this->validate([
             'name'=>'required|string',
-            'file'=>'required|file|mimes:audio/mpeg,mpga,mp3,wav'
+            'file'=>'file|mimes:audio/mpeg,mpga,mp3,wav|max:102400'
         ]);
 
         $file = $this->file->storeAs('public/sound', $this->name.'.mp3');
@@ -42,5 +43,12 @@ class Create extends Component
             'file'=>$file
         ]);
         $this->emit('createBell', $bell);
+        $this->kosongkanField();
+    }
+
+    public function kosongkanField()
+    {
+        $this->file = null;
+        $this->name = '';
     }
 }

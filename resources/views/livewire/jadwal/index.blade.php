@@ -1,14 +1,39 @@
 <div>
+    @if (Session::has('success'))
+        <div class="bg-green-500 p-2 text-white mb-3 flex justify-between mt-3">
+            <div class="flex justify-self-start align-middle">
+                <div class="font-bold mr-3">
+                    {{-- <h1>Sukses!</h1> --}}
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                    </svg>
+                </div>
+                <div>
+                    <p>{{ session('success') }}</p>
+                </div>
+            </div>
+            <div>
+                <button class="self-end" wire:click="deleteSession">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    @endif
     <div class="container mt-3">
+        <livewire:jadwal.create :day_id="$day_id" />
         <div>
-            <select class="border w-auto border-slate-500 border-2 w-1 mb-3 p-2 rounded" wire:model="day_id">
+            <select class="border mb-3 rounded p-2" wire:model="day_id">
                 <option selected>---Pilih hari---</option>
                 @foreach ($days as $item)
                     <option value="{{ $item->id }}">{{ $item->name }}</option>
                 @endforeach
             </select>
         </div>
-        <livewire:jadwal.create />
     </div>
     <div class="container">
         <table class="border-collapse border border-slate-500">
@@ -16,6 +41,7 @@
                 <tr>
                     <th class="border border-slate-600 p-2">#</th>
                     <th class="border border-slate-600 p-2">Jam</th>
+                    <th class="border border-slate-600 p-2">Hari</th>
                     <th class="border border-slate-600 p-2">Kegiatan</th>
                     <th class="border border-slate-600 p-2"></th>
                 </tr>
@@ -26,8 +52,9 @@
                         <tr>
                             <td class="border border-slate-700 p-2">{{ $loop->iteration }}</td>
                             <td class="border border-slate-700 p-2">{{ $schedule->time }}</td>
+                            <td class="border border-slate-700 p-2">{{ $schedule->day->name }}</td>
                             <td class="border border-slate-700 p-2">
-                                asd
+                                {{ $schedule->activity->name }}
                             </td>
                             <td class="border border-slate-700 p-2">
                                 <button type="button" class="bg-red-500 p-2 text-white"

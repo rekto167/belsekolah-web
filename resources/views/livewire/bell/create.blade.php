@@ -9,10 +9,20 @@
                     <input type="text" class="border border-gray-200 p-2 rounded flex"
                         placeholder="contoh: Audio Jam Pertama" wire:model="name">
                 </div>
-                <div class="mb-3">
+                <div x-data="{ isUploading: false, progress: 0 }" x-on:livewire-upload-start="isUploading = true"
+                    x-on:livewire-upload-finish="isUploading = false" x-on:livewire-upload-error="isUploading = false"
+                    x-on:livewire-upload-progress="progress = $event.detail.progress" class="mb-3">
                     <label>File Audio</label>
                     <input type="file" class="border border-gray-200 p-2 rounded flex"
                         placeholder="contoh: Audio Jam Pertama" wire:model="file">
+                    @error('file')
+                        <span class="text-red-500">{{ $message }}</span>
+                    @enderror
+                    <!-- Progress Bar -->
+                    <div x-show="isUploading">
+                        <progress max="100" x-bind:value="progress"></progress>
+                    </div>
+
                 </div>
                 <button type="button"
                     class="bg-slate-300 text-dark hover:bg-slate-500 hover:text-white font-semibold p-2"

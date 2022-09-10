@@ -13,6 +13,10 @@ class Index extends Component
     public $day_id;
     public $show;
 
+    public $listeners = [
+        'stored' => 'handleStore'
+    ];
+
     public function mount()
     {
         $this->show = false;
@@ -31,5 +35,15 @@ class Index extends Component
             'schedules'=>$schedules,
             'days'=>$days,
         ]);
+    }
+
+    public function handleStore($data){
+        session()->flash('success', 'Tambah jadwal berhasil.');
+    }
+
+    public function deleteIt($id){
+        $schedule = Schedule::find($id);
+        $schedule->delete();
+        session('success', 'Hapus data berhasil.');
     }
 }
