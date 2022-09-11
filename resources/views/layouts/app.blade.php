@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{asset('js/moment.min.js')}}"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
     <script src="https://unpkg.com/@victoryoalli/alpinejs-timeout@1.0.0/dist/timeout.min.js" defer></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @livewireStyles
@@ -17,7 +17,7 @@
     <navbar>
         <div class="w-full p-3 bg-cyan-500 flex">
             <div class="mr-3">
-                <h1>Bel Sekolah</h1>
+                <a href="{{ route('home') }}">Bel Sekolah</a>
             </div>
             <div class="font-semibold text-slate-100 flex">
                 <ul class="flex">
